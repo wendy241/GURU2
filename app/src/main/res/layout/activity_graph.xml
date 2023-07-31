@@ -7,6 +7,23 @@
     android:background="@color/white"
     tools:context=".GraphActivity">
 
+    <EditText
+        android:id="@+id/weightEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:fontFamily="@font/nanumsquareneo_cbd"
+        android:hint="몸무게"
+        android:inputType="number|numberDecimal|numberSigned"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -37,37 +54,34 @@
     </RadioGroup>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/lineChartCardView"
+    android:id="@+id/lineChartCardView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardElevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintDimensionRatio="1:0.5"
-        app:layout_constraintWidth_percent="0.9">
-
-        <HorizontalScrollView
-            android:id="@+id/horizontal_scroll_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:paddingBottom="5dp"
-            android:scrollbars="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:fontFamily="@font/nanumsquareneo_cbd"
-                    android:id="@+id/line_chart"
-                    android:layout_width="1000dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-        </HorizontalScrollView>
-    </androidx.cardview.widget.CardView>
+    android:layout_height="0dp"
+    app:cardElevation="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintDimensionRatio="1:0.5"
+    app:layout_constraintWidth_percent="0.9">
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="5dp"
+        android:scrollbars="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <com.github.mikephil.charting.charts.LineChart
+                android:fontFamily="@font/nanumsquareneo_cbd"
+                android:id="@+id/line_chart"
+                android:layout_width="1000dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</androidx.cardview.widget.CardView>
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="65dp"
@@ -97,4 +111,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_scale_24"
         tools:layout_editor_absoluteY="518dp" />
+
+    <Button
+        android:id="@+id/inputButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="#374BBA"
+        android:backgroundTint="#374BBA"
+        android:fontFamily="@font/nanumsquareneo_cbd"
+        android:padding="7px"
+        android:text="입력"
+        android:textColor="#F8F6F6"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/weightEditText"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="@+id/weightEditText"
+        app:layout_constraintTop_toBottomOf="@+id/weightEditText" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 액션 바 관련 설정 삭제 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- 기타 테마 속성들 -->
+        <item name="colorPrimary">#344991</item> <!-- 상단 바 색상 -->
+        <item name="colorPrimaryDark">#344991</item> <!-- 상단 바 아래 색상 (예를 들어 상태바) -->
+        <item name="colorAccent">#344991</item> <!-- 액센트 색상 -->
+        <item name="android:fontFamily">@NanumSquareNeoOTF-Bd.otf</item>
+
+        <!-- 앱 이름(액션 바의 제목 텍스트)의 색상을 흰색(#FFFFFF)으로 변경 -->
+        <!--item name="android:textColorPrimary">#FFFFFF</item-->
+    </style>
+</resources>

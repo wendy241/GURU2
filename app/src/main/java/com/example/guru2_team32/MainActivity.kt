@@ -1,5 +1,6 @@
 package com.example.guru2_team32
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
     lateinit var inputButton: Button
@@ -36,19 +36,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveData2(weight: Int){
-        var pref = this.getPreferences(0)
-        var editor = pref.edit()
-        editor.putInt("KEY_WEIGHT",
-            weightEditText.text.toString()!!.toFloat().roundToInt()
-        ).apply()
-
-        val intent = Intent(this, GraphActivity::class.java)
-        intent.putExtra("weight", weight)
-        startActivity(intent)
-    }
 
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -65,12 +55,13 @@ class MainActivity : AppCompatActivity() {
         loadData()
 
         imageButton1.setOnClickListener {
-            val weightValue = weightEditText.text.toString()
 
-            val intent = Intent(this, GraphActivity::class.java)
-            intent.putExtra("weight", weightValue.toFloat()) // String을 Float로 변환하여 전달
+             val intent = Intent(this, GraphActivity::class.java)
+            //intent.putExtra("weight", weightEditText.text.toString())
             startActivity(intent)
-        }
+            }
+
+
 
         imageButton3.setOnClickListener {
 

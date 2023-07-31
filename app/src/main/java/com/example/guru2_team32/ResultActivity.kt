@@ -17,11 +17,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var resultTextView: TextView
     private var weightValue: Float = 0.0f
 
-    private fun openActivity_graph() {
-        val intent = Intent(this, GraphActivity::class.java)
-        intent.putExtra("weight", weightValue.toString()) // weight 값을 String으로 전달
-        startActivity(intent)
-    }
+
     private fun openActivity_main() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
@@ -96,6 +92,11 @@ class ResultActivity : AppCompatActivity() {
         barLabel.text = "BMI: $bmi"
 
 
+    }
+    private fun openActivity_graph() {
+        val intent = Intent(this, GraphActivity::class.java)
+        //intent.putExtra("weight", weightValue.toString()) // weight 값을 String으로 전달
+        startActivity(intent)
     }
 
 }
